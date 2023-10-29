@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa" dir="rtl" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +7,8 @@
     <link rel="icon" href="/Public/images/fav-icon.png" type="image/png">
     <title>Golden Shop</title>
 </head>
-<body class="font-Dana">
-    <svg>
+<body class="font-Dana bg-gray-100 dark:bg-zinc-800">
+    <svg class="hidden">
         <symbol id="shopping-cart" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"">
             <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
           </symbol>
@@ -22,39 +22,34 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
           </symbol>
     </svg>
-    <header>
-        <div>
+    <header class="bg-black/50 w-[90%] h-24 px-10 py-5 fixed right-0 left-0 mx-auto flex items-center rounded-3xl backdrop:blur-[6px] mt-9">
+    <div class="w-full flex justify-between items-center">
         <!--logo and menu-->
-        <nav>
+        <nav class="flex items-center gap-9 h-14" >
             <div>
                 <img src="images/app-logo.png" alt="Golden Coffe">
             </div>
-            <ul>
-                <li>
+            <ul class="flex gap-9 text-gray-300 text-xl tracking-tightest h-full leading-[56px]">
+                <li class="font-DanaMedium text-orange-200">
                     <a href="#">صفحه اصلی</a>
                 </li>
-                <li>
-                    <a href="#">فروشگاه</a>
-                    <ul>
-                        <li>
+                <li class="relative group">
+                    <a href="#" class="group-hover:text-orange-300 transition-colors">فروشگاه</a>
+                    <div class="absolute p-6 space-y-4 w-52 top-full bg-white dark:text-white rounded-2xl text-zinc-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible
+                    transition-all tracking-normal text-base [&>*:hover]:text-orange-300 [&>*]:inline-block border-t-[3px] border-t-orange-300  dark:bg-zinc-700 shadow-normal">
                             <a href="#">قهوه ویژه</a>
-                        </li>
-                        <li>
+                        
                             <a href="#">ویژه در سطح جهانی</a>
-                        </li>
-                        <li>
+
                             <a href="#">قهوه درجه یک</a>
-                        </li>
-                        <li>
+
                             <a href="#">ترکیبات تجاری</a>
-                        </li>
-                        <li>
+
                             <a href="#">کپسول قهوه</a>
-                        </li>
-                        <li>
+
                             <a href="#">قهوه زینو برزیلی</a>
-                        </li>
-                    </ul>
+
+                    </div>
                 </li>
                 <li>
                     <a href="#">دیکشنری</a>
@@ -71,21 +66,24 @@
             </ul>
         </nav>
         <!--cart & theme toggle & login links-->
-        <div>
-            <div>
-                <div>
+        <div class="flex text-orange-200">
+            <div class="flex gap-5 h-14 items-center border-l-2 border-black/20 pl-10">
+                <div class="py-3">
                     <svg class="w-8 h-8">
                         <use xlink:href="#shopping-cart"></use>
                     </svg>
                 </div>
-                <div>
-                    <svg class="w-8 h-8">
+                <div id="theme-toggle" class="py-3 cursor-pointer">
+                    <svg class="w-8 h-8 transition-all dark:hidden">
                         <use xlink:href="#moon"></use>
+                    </svg>
+                    <svg class="w-8 h-8 transition-all hidden dark:inline-block">
+                        <use xlink:href="#sun"></use>
                     </svg>
                 </div>
             </div>
-            <a href="#">
-               <svg class="w-8 h-8">
+            <a href="#" class="flex gap-[10px] items-center pr-10 text-orange-200 tracking-tightest">
+               <svg class="w-8 h-8 rotate-180">
                 <use xlink:href="#arrow-left-on-rec"></use>
                </svg>
                ورود | ثبت نام 
@@ -93,6 +91,6 @@
         </div>
     </div>
     </header>
-<script src="/Public/scripts/app.js"></script>
+<script src="/Public/scripts/app.js" defer></script>
 </body>
 </html>
