@@ -21,6 +21,10 @@
           <symbol id="arrow-left-on-rec" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
           </symbol>
+          <symbol id="shopping-bag" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+          </symbol>
+          
     </svg>
     <header class="bg-black/50 w-[90%] h-24 px-10 py-5 fixed right-0 left-0 mx-auto flex items-center rounded-3xl backdrop:blur-[6px] mt-9">
     <div class="w-full flex justify-between items-center">
@@ -68,10 +72,28 @@
         <!--cart & theme toggle & login links-->
         <div class="flex text-orange-200">
             <div class="flex gap-5 h-14 items-center border-l-2 border-black/20 pl-10">
-                <div class="py-3">
+                <div class="py-3 relative group">
                     <svg class="w-8 h-8">
                         <use xlink:href="#shopping-cart"></use>
                     </svg>
+                    <div class="absolute w-[400px] [&>*]:block py-12 px-20 gap-10 flex flex-col justify-center
+                        items-center text-center
+                     bg-white top-full left-0 border-t-[3px] rounded-2xl transition-all
+                      border-t-orange-300 text-zinc-700
+                      opacity-0 invisible group-hover:opacity-100 group-hover:visible
+                      dark:bg-zinc-700 dark:text-white">
+                      <div class=" space-y-3 text-base [&>*]:block">
+                        <svg class="w-14 h-14 flex justify-center mx-auto">
+                            <use href="#shopping-bag"></use>
+                        </svg>
+                        <span>
+                            هنوز محصولی به سبد خرید اضافه نشده
+                        </span>
+                      </div>
+                      <a href="#" class="w-64 h-14 bg-[#0D9488] py-4 flex justify-center rounded-xl text-white text-xl ">
+                        مشاهده صفحه فروشگاه
+                      </a>
+                    </div>
                 </div>
                 <div id="theme-toggle" class="py-3 cursor-pointer">
                     <svg class="w-8 h-8 transition-all dark:hidden">
